@@ -3,7 +3,6 @@ import connection from "../database/connection.js"
 class TeamRepository {
     create(team) {
         const sql = "INSERT INTO teams SET ?;"
-
         return new Promise((resolve, reject) => {
             connection.query(sql, team, (error, result) => {
                 if (error) return reject('Unable to register')
